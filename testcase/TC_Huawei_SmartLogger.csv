@@ -1,0 +1,73 @@
+Product,Category,Summary,Text
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] CMP - 確認 storedElectricityPrecent 點位可以在 CMP 上面的 Meta/Data Scope 欄位新增,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+
+### Test step:
+1. 登入 CMP
+2. 選擇要新增裝置的 Client
+3. 選擇要綁定裝置的 Field
+4. 根據裝置種類打開 New Device 視窗
+5. Monitoring Device Info 展開 Model 選擇 Huawei_SmartLogger
+6. 選擇 Device UUID
+7. 設定 Device Name
+8. 展開 Meta Scope 和 Data Scope 選取 storedElectricityPrecent
+
+### Expected result:
+皆可以選取到 storedElectricityPrecent scope"
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] CEMS - 確認 storedElectricityPrecent 點位可以在 CEMS 前台顯示且數值顯示正確,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+3. 已經開始送裝置資料到 CEMS DB
+
+### Test step:
+1. 登入 CEMS
+2. 檢查卡片上數值有顯示 storedElectricityPrecent 數值
+
+### Expected result:
+卡片上數值顯示正確"
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] Data - 確認 storedElectricityPrecent 資料可以寫入 CEMS DB,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+
+### Test step:
+1. 透過 Webhook 機制送 storedElectricityPrecent 資料
+
+### Expected result:
+storedElectricityPrecent 資料有寫進 cems DB"
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] CMP - 確認 generatedElectricity 點位可以在 CMP 上面的 Meta/Data Scope 欄位新增,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+
+### Test step:
+1. 登入 CMP
+2. 選擇要新增裝置的 Client
+3. 選擇要綁定裝置的 Field
+4. 根據裝置種類打開 New Device 視窗
+5. Monitoring Device Info 展開 Model 選擇 Huawei_SmartLogger
+6. 選擇 Device UUID
+7. 設定 Device Name
+8. 展開 Meta Scope 和 Data Scope 選取 generatedElectricity
+
+### Expected result:
+皆可以選取到 generatedElectricity scope"
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] CEMS - 確認 generatedElectricity 點位可以在 CEMS 前台顯示且數值顯示正確,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+3. 已經開始送裝置資料到 CEMS DB
+
+### Test step:
+1. 登入 CEMS
+2. 檢查卡片上數值有顯示 generatedElectricity 數值
+
+### Expected result:
+卡片上數值顯示正確"
+CEMS Web,RAT,[CEMS][New Device][Huawei_SmartLogger] Data - 確認 generatedElectricity 資料可以寫入 CEMS DB,"### Pre-condition:
+1. Gateway 已經新增 Device
+2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB
+
+### Test step:
+1. 透過 Webhook 機制送 generatedElectricity 資料
+
+### Expected result:
+generatedElectricity 資料有寫進 cems DB"

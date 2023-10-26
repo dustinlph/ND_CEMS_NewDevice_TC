@@ -1,0 +1,20 @@
+{
+    "project": "CEMS Web",
+    "tc": [
+        {
+            "category": "RAT",
+            "title": "[CEMS][New Device][{model}] CMP - 確認 {scope} 點位可以在 CMP 上面的 Meta/Data Scope 欄位新增",
+            "content": "### Pre-condition:\n1. Gateway 已經新增 Device\n2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB\n\n### Test step:\n1. 登入 CMP\n2. 選擇要新增裝置的 Client\n3. 選擇要綁定裝置的 Field\n4. 根據裝置種類打開 New Device 視窗\n5. Monitoring Device Info 展開 Model 選擇 {model}\n6. 選擇 Device UUID\n7. 設定 Device Name\n8. 展開 Meta Scope 和 Data Scope 選取 {scope}\n\n### Expected result:\n皆可以選取到 {scope} scope"
+        },
+        {
+            "category": "RAT",
+            "title": "[CEMS][New Device][{model}] CEMS - 確認 {scope} 點位可以在 CEMS 前台顯示且數值顯示正確",
+            "content": "### Pre-condition:\n1. Gateway 已經新增 Device\n2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB\n3. 已經開始送裝置資料到 CEMS DB\n\n### Test step:\n1. 登入 CEMS\n2. 檢查卡片上數值有顯示 {scope} 數值\n\n### Expected result:\n卡片上數值顯示正確"
+        },
+        {
+            "category": "RAT",
+            "title": "[CEMS][New Device][{model}] Data - 確認 {scope} 資料可以寫入 CEMS DB",
+            "content": "### Pre-condition:\n1. Gateway 已經新增 Device\n2. Device 資料已經透過 Webhook 將資料由 eg3 DB 流至 cems DB\n\n### Test step:\n1. 透過 Webhook 機制送 {scope} 資料\n\n### Expected result:\n{scope} 資料有寫進 cems DB"
+        }
+    ]
+}
