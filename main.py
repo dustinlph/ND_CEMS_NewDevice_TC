@@ -4,15 +4,13 @@ import csv
 import sys
 import json
 from enum import Enum
-"""
-func options: get, set, once
-*note: once -> get once
-"""
+
+MODEL = "Mitsubishi_M8FM-Series"
+SCOPES: list = ["instanceElectricity", "normalUsage", "reverseUsage"]
+
 testplan_path: str = os.path.join(os.getcwd(), 'testcases.json')
 list_testcases: list = []
 csv_title_list: list = ["Product", "Category", "Summary", "Text"]
-model = "Mitsubishi_M8FM-Series"
-list_scope = ["instanceElectricity", "normalUsage", "reverseUsage"]
 
 
 def execute(scope: list):
@@ -28,21 +26,21 @@ def execute(scope: list):
             list_testcases.append(
                 [
                 testplan["project"],testplan["tc"][tc]["category"],
-                testplan["tc"][tc]["title"].format(model=model, scope=s),testplan["tc"][tc]["content"].format(model=model, scope=s)
+                testplan["tc"][tc]["title"].format(model=MODEL, scope=s),testplan["tc"][tc]["content"].format(model=MODEL, scope=s)
                 ]
             )
     return list_testcases
 
 
 def create_csv(testcase: list):
-    with open(f"testcase/CEMS_NewDevice_TC_{model}.csv", 'w', newline='', encoding='utf-8') as csvfile:
+    with open(f"testcase/CEMS_NewDevice_TC_{MODEL}.csv", 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         for tc in testcase:
             writer.writerow(tc)
 
 
 if __name__ == '__main__':
-    result = execute(list_scope)
+    result = execute(SCOPES)
     create_csv(result)
     print("DONE")
 
